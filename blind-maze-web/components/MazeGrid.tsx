@@ -69,6 +69,7 @@ export default function MazeGrid({
                   type={tile}
                   isVisible={isVisible}
                   size={tileSize}
+                  isFullReveal={isRevealing}
                 />
               );
             })

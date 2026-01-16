@@ -160,6 +160,7 @@ export function useGame() {
       // Check if stepped on bomb
       if (tileType === TileType.Bomb) {
         setGameState(GameState.GameOver);
+        setIsRevealing(true); // Show bombs on game over
         // Reveal entire maze
         const allPositions = getAllPositions(maze);
         const allKeys = new Set(allPositions.map(positionToKey));
@@ -169,13 +170,18 @@ export function useGame() {
 
       // Check if stepped on reveal tile
       if (tileType === TileType.Reveal) {
+        setIsRevealing(true); // Show bombs during reveal
         // Reveal entire maze for 3 seconds
         const allPositions = getAllPositions(maze);
         const allKeys = new Set(allPositions.map(positionToKey));
         setVisibleTiles(allKeys);
         
         // Hide after 3 seconds
-        setTimeout(() => {
+        if (revealTimerRef.current) {
+          clearTimeout(revealTimerRef.current);
+        }
+        revealTimerRef.current = setTimeout(() => {
+          setIsRevealing(false);
           if (gameState === GameState.Playing) {
             updateVisibleTiles(newPosition);
           }

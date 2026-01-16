@@ -12,9 +12,10 @@ interface TileProps {
   type: TileType;
   isVisible: boolean;
   size: number;
+  isFullReveal?: boolean; // True during initial reveal or reveal tile - bombs only visible during this
 }
 
-export default function Tile({ type, isVisible, size }: TileProps) {
+export default function Tile({ type, isVisible, size, isFullReveal = false }: TileProps) {
   return (
     <motion.div
       className="relative flex items-center justify-center"
@@ -89,7 +90,8 @@ export default function Tile({ type, isVisible, size }: TileProps) {
         </motion.div>
       )}
 
-      {type === TileType.Bomb && isVisible && (
+      {/* Bombs only visible during full reveal (initial or reveal tile), NOT during normal gameplay */}
+      {type === TileType.Bomb && isVisible && isFullReveal && (
         <motion.div
           className="absolute inset-0 flex items-center justify-center"
           style={{ width: size, height: size }}
