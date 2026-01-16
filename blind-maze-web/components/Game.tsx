@@ -7,6 +7,7 @@
 
 import { useSwipeable } from 'react-swipeable';
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Direction } from '@/lib/types';
 import { useGame } from '@/lib/useGame';
 import MazeGrid from './MazeGrid';
