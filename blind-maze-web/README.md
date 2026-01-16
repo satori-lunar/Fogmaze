@@ -106,7 +106,7 @@ vercel --prod
 - **Earn gold** by completing levels:
   - +1 gold per level completed
   - +5 bonus gold for completing without hitting a bomb
-- **Buy hearts** with gold (10 gold = 1 heart)
+- **Buy hearts** with gold (75 gold = 1 heart)
 - **Buy gold** with real money via Stripe
 
 ## 🏗️ Project Structure

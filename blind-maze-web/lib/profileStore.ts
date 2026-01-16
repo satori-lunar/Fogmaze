@@ -7,7 +7,7 @@
 
 const STORAGE_KEY = 'fogmaze_profile';
 const MAX_HEARTS = 3;
-const HEART_COST_GOLD = 10;
+const HEART_COST_GOLD = 75;
 
 export interface PlayerProfile {
   currentLevel: number;
