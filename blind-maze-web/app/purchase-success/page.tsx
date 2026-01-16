@@ -5,16 +5,17 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { addGold, loadProfile } from '@/lib/profileStore';
 
-export default function PurchaseSuccessPage() {
+function PurchaseSuccessContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [credited, setCredited] = useState(false);
   const [goldAmount, setGoldAmount] = useState(0);
+  const [currentBalance, setCurrentBalance] = useState(0);
 
   useEffect(() => {
     const gold = parseInt(searchParams.get('gold') || '0', 10);
@@ -26,6 +27,9 @@ export default function PurchaseSuccessPage() {
       setGoldAmount(gold);
       setCredited(true);
     }
+    
+    // Update current balance
+    setCurrentBalance(loadProfile().gold);
   }, [searchParams, credited]);
 
   const handleContinue = () => {
@@ -84,7 +88,7 @@ export default function PurchaseSuccessPage() {
       >
         Your gold has been added to your account.
         <br />
-        Current balance: {loadProfile().gold} gold
+        Current balance: {currentBalance} gold
       </motion.p>
 
       <motion.button
@@ -104,5 +108,26 @@ export default function PurchaseSuccessPage() {
         Continue Playing
       </motion.button>
     </div>
+  );
+}
+
+function LoadingFallback() {
+  return (
+    <div
+      className="fixed inset-0 flex flex-col items-center justify-center p-6"
+      style={{
+        background: 'radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0a 100%)',
+      }}
+    >
+      <div className="text-gray-400">Loading...</div>
+    </div>
+  );
+}
+
+export default function PurchaseSuccessPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <PurchaseSuccessContent />
+    </Suspense>
   );
 }
