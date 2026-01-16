@@ -5,8 +5,7 @@
 
 'use client';
 
-import { useSwipeable } from 'react-swipeable';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Direction, GameState } from '@/lib/types';
 import { useGame } from '@/lib/useGame';
@@ -27,36 +26,69 @@ export default function Game() {
   } = useGame();
 
   const [touchFeedback, setTouchFeedback] = useState<string | null>(null);
+  const touchStartPos = useRef<{ x: number; y: number } | null>(null);
+  const lastMoveTime = useRef<number>(0);
 
-  // Swipe handlers with highly optimized settings for mobile
-  const handlers = useSwipeable({
-    onSwipedUp: () => {
-      setTouchFeedback('↑');
-      movePlayer(Direction.Up);
+  // Touch/drag movement - move in direction of finger drag
+  const handleTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
+    if (gameState !== GameState.Playing) return;
+    
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    
+    touchStartPos.current = { x: clientX, y: clientY };
+  };
+
+  const handleTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
+    if (gameState !== GameState.Playing || !touchStartPos.current) return;
+    
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+    
+    const deltaX = clientX - touchStartPos.current.x;
+    const deltaY = clientY - touchStartPos.current.y;
+    
+    // Minimum movement threshold (in pixels)
+    const threshold = 30;
+    
+    // Throttle movements to prevent too rapid firing
+    const now = Date.now();
+    if (now - lastMoveTime.current < 150) return;
+    
+    // Determine primary direction based on larger delta
+    if (Math.abs(deltaX) > threshold || Math.abs(deltaY) > threshold) {
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        // Horizontal movement
+        if (deltaX > 0) {
+          movePlayer(Direction.Right);
+          setTouchFeedback('→');
+        } else {
+          movePlayer(Direction.Left);
+          setTouchFeedback('←');
+        }
+      } else {
+        // Vertical movement
+        if (deltaY > 0) {
+          movePlayer(Direction.Down);
+          setTouchFeedback('↓');
+        } else {
+          movePlayer(Direction.Up);
+          setTouchFeedback('↑');
+        }
+      }
+      
+      // Reset start position for continuous movement
+      touchStartPos.current = { x: clientX, y: clientY };
+      lastMoveTime.current = now;
+      
+      // Clear feedback after a short delay
       setTimeout(() => setTouchFeedback(null), 200);
-    },
-    onSwipedDown: () => {
-      setTouchFeedback('↓');
-      movePlayer(Direction.Down);
-      setTimeout(() => setTouchFeedback(null), 200);
-    },
-    onSwipedLeft: () => {
-      setTouchFeedback('←');
-      movePlayer(Direction.Left);
-      setTimeout(() => setTouchFeedback(null), 200);
-    },
-    onSwipedRight: () => {
-      setTouchFeedback('→');
-      movePlayer(Direction.Right);
-      setTimeout(() => setTouchFeedback(null), 200);
-    },
-    delta: 15, // Sweet spot for responsiveness without accidental swipes
-    preventScrollOnSwipe: true,
-    trackMouse: true,
-    trackTouch: true,
-    touchEventOptions: { passive: false },
-    swipeDuration: 1000, // Allow slower swipes for better UX
-  });
+    }
+  };
+
+  const handleTouchEnd = () => {
+    touchStartPos.current = null;
+  };
 
   // Keyboard controls
   useEffect(() => {
@@ -112,7 +144,13 @@ export default function Game() {
 
   return (
     <div
-      {...handlers}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onMouseDown={handleTouchStart}
+      onMouseMove={handleTouchMove}
+      onMouseUp={handleTouchEnd}
+      onMouseLeave={handleTouchEnd}
       className="min-h-screen flex flex-col items-center justify-center select-none"
       style={{
         background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
@@ -120,6 +158,7 @@ export default function Game() {
         WebkitTouchCallout: 'none', // Disable iOS callout
         WebkitUserSelect: 'none', // Disable iOS text selection
         userSelect: 'none',
+        cursor: gameState === GameState.Playing ? 'grab' : 'default',
       }}
     >
       {/* Level indicator */}
