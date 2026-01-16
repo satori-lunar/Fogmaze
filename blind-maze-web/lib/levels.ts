@@ -44,7 +44,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 7, y: 7 },
   },
 
-  // Level 3 - Spiral pattern
+  // Level 3 - Spiral pattern (fixed with accessible exit)
   {
     width: 11,
     height: 11,
@@ -54,10 +54,10 @@ export const levels: Maze[] = [
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Wall, Exit, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Exit, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
     ],

@@ -91,26 +91,26 @@ struct MazeLevels {
             exitPosition: Position(x: 7, y: 7)
         ),
         
-        // Level 3 - Spiral pattern
-        Maze(
-            width: 11,
-            height: 11,
-            tiles: [
-                [.wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall],
-                [.wall, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .wall],
-                [.wall, .empty, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .empty, .wall],
-                [.wall, .empty, .wall, .empty, .empty, .empty, .empty, .empty, .wall, .empty, .wall],
-                [.wall, .empty, .wall, .empty, .wall, .wall, .wall, .empty, .wall, .empty, .wall],
-                [.wall, .empty, .wall, .empty, .wall, .exit, .wall, .empty, .wall, .empty, .wall],
-                [.wall, .empty, .wall, .empty, .wall, .wall, .wall, .empty, .wall, .empty, .wall],
-                [.wall, .empty, .wall, .empty, .empty, .empty, .empty, .empty, .wall, .empty, .wall],
-                [.wall, .empty, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .empty, .wall],
-                [.wall, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .wall],
-                [.wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall]
-            ],
-            startPosition: Position(x: 1, y: 1),
-            exitPosition: Position(x: 5, y: 5)
-        ),
+    // Level 3 - Spiral pattern (fixed with accessible exit)
+    Maze(
+        width: 11,
+        height: 11,
+        tiles: [
+            [.wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall],
+            [.wall, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .wall],
+            [.wall, .empty, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .empty, .wall],
+            [.wall, .empty, .wall, .empty, .empty, .empty, .empty, .empty, .wall, .empty, .wall],
+            [.wall, .empty, .wall, .empty, .wall, .wall, .wall, .empty, .wall, .empty, .wall],
+            [.wall, .empty, .wall, .empty, .wall, .exit, .empty, .empty, .wall, .empty, .wall],
+            [.wall, .empty, .wall, .empty, .wall, .wall, .wall, .wall, .wall, .empty, .wall],
+            [.wall, .empty, .wall, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .wall],
+            [.wall, .empty, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall],
+            [.wall, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .empty, .wall],
+            [.wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall, .wall]
+        ],
+        startPosition: Position(x: 1, y: 1),
+        exitPosition: Position(x: 5, y: 5)
+    ),
         
         // Level 4 - Zigzag challenge
         Maze(
