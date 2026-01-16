@@ -54,7 +54,6 @@ export default function Game() {
     trackTouch: true,
     touchEventOptions: { passive: false },
     swipeDuration: 1000, // Allow slower swipes for better UX
-    preventDefaultTouchmoveEvent: true,
   });
 
   // Keyboard controls
