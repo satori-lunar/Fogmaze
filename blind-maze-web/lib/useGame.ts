@@ -111,7 +111,11 @@ export function useGame() {
 
   // Initialize game
   useEffect(() => {
-    startLevel(1);
+    try {
+      startLevel(1);
+    } catch (error) {
+      console.error('Error initializing game:', error);
+    }
     
     return () => {
       if (revealTimerRef.current) {
