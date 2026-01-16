@@ -110,6 +110,579 @@ export const levels: Maze[] = [
     startPosition: { x: 1, y: 1 },
     exitPosition: { x: 11, y: 11 },
   },
+
+  // Level 6 - Winding Path
+  {
+    width: 9,
+    height: 9,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 7, y: 7 },
+  },
+
+  // Level 7 - Cross Pattern
+  {
+    width: 9,
+    height: 9,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 7, y: 7 },
+  },
+
+  // Level 8 - Chambers
+  {
+    width: 11,
+    height: 9,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Exit, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 9, y: 1 },
+  },
+
+  // Level 9 - Diagonal Maze
+  {
+    width: 11,
+    height: 11,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 9, y: 9 },
+  },
+
+  // Level 10 - Double Spiral
+  {
+    width: 11,
+    height: 11,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Exit, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 5, y: 5 },
+  },
+
+  // Level 11 - Narrow Passages
+  {
+    width: 13,
+    height: 9,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Exit, Wall],
+      [Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 11, y: 1 },
+  },
+
+  // Level 12 - Checkerboard
+  {
+    width: 11,
+    height: 11,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 9, y: 9 },
+  },
+
+  // Level 13 - Snake Path
+  {
+    width: 9,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 7, y: 11 },
+  },
+
+  // Level 14 - Ring Maze
+  {
+    width: 11,
+    height: 11,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Exit, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 5, y: 5 },
+  },
+
+  // Level 15 - Quarters
+  {
+    width: 13,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Exit, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 11, y: 11 },
+  },
+
+  // Level 16 - Labyrinth
+  {
+    width: 13,
+    height: 11,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 11, y: 9 },
+  },
+
+  // Level 17 - Corridors
+  {
+    width: 11,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 9, y: 11 },
+  },
+
+  // Level 18 - Diamond
+  {
+    width: 13,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Exit, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 6, y: 6 },
+  },
+
+  // Level 19 - Maze Runner
+  {
+    width: 15,
+    height: 11,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Exit, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 13, y: 1 },
+  },
+
+  // Level 20 - Grand Finale Easy
+  {
+    width: 15,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Exit, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 7, y: 6 },
+  },
+
+  // Levels 21-30: Expert Challenges
+  
+  // Level 21 - The Gauntlet
+  {
+    width: 15,
+    height: 15,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Exit, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 7, y: 7 },
+  },
+
+  // Level 22-30: Continue with increasingly complex patterns
+  // (I'll create 8 more challenging levels)
+
+  // Level 22 - Crossroads
+  {
+    width: 13,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Empty, Wall, Empty, Exit, Empty, Wall, Empty, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 6, y: 6 },
+  },
+
+  // Level 23-30 will follow similar complex patterns
+  // For brevity, I'll create varied challenging mazes
+
+  // Level 23 - The Fortress
+  {
+    width: 15,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 13, y: 1 },
+  },
+
+  // Levels 24-30: Continue with maximum complexity
+  // Creating final 7 levels with varied patterns
+
+  // Level 24 - Infinity
+  {
+    width: 15,
+    height: 11,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Exit, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 13, y: 1 },
+  },
+
+  // Level 25-30: Final expert levels
+  // (Creating 5 more ultra-challenging mazes)
+
+  // Level 25 - The Nexus
+  {
+    width: 17,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Exit, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 8, y: 6 },
+  },
+
+  // Level 26-30: Ultimate challenges
+  // Creating final 5 levels with maximum complexity
+
+  // Level 26 - The Labyrinth
+  {
+    width: 17,
+    height: 15,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Exit, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 8, y: 7 },
+  },
+
+  // Level 27-30: Final four ultimate mazes
+  // Creating the last 4 levels
+
+  // Level 27 - The Citadel
+  {
+    width: 15,
+    height: 15,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Exit, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 7, y: 7 },
+  },
+
+  // Level 28 - The Maze Master
+  {
+    width: 17,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Exit, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 15, y: 1 },
+  },
+
+  // Level 29 - The Enigma
+  {
+    width: 19,
+    height: 13,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Exit, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 9, y: 6 },
+  },
+
+  // Level 30 - The Ultimate Challenge
+  {
+    width: 19,
+    height: 15,
+    tiles: [
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Empty, Exit, Empty, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
+    ],
+    startPosition: { x: 1, y: 1 },
+    exitPosition: { x: 9, y: 7 },
+  },
 ];
 
 export function getLevel(levelNumber: number): Maze | null {
