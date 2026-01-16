@@ -72,14 +72,29 @@ export default function Game() {
   return (
     <div
       {...handlers}
-      className="min-h-screen bg-near-black flex flex-col items-center justify-center select-none touch-none"
+      className="min-h-screen flex flex-col items-center justify-center select-none touch-none"
+      style={{
+        background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
+      }}
     >
       {/* Level indicator */}
-      <div className="mb-8 text-center">
-        <h1 className="text-2xl md:text-3xl font-light text-white/80 tracking-wide">
+      <motion.div 
+        className="mb-12 text-center"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      >
+        <h1 
+          className="text-3xl md:text-4xl font-extralight tracking-[0.3em] uppercase"
+          style={{
+            color: 'rgba(255, 255, 255, 0.7)',
+            textShadow: '0 2px 20px rgba(96, 165, 250, 0.15)',
+            letterSpacing: '0.3em',
+          }}
+        >
           Level {currentLevel}
         </h1>
-      </div>
+      </motion.div>
 
       {/* Maze */}
       <div className="flex-1 flex items-center justify-center w-full px-4">
@@ -91,12 +106,22 @@ export default function Game() {
         />
       </div>
 
-      {/* Instructions (only show on desktop) */}
-      <div className="hidden md:block mb-8 text-center">
-        <p className="text-sm text-white/40">
-          Use arrow keys or WASD to move • Swipe on touch devices
+      {/* Instructions (only show on desktop, very subtle) */}
+      <motion.div 
+        className="hidden md:block mb-10 text-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+      >
+        <p 
+          className="text-xs font-light tracking-wider"
+          style={{
+            color: 'rgba(255, 255, 255, 0.25)',
+          }}
+        >
+          Arrow keys or WASD to move
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 }
