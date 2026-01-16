@@ -9,8 +9,13 @@ export const metadata: Metadata = {
   description: 'Navigate through mazes with limited visibility in this minimalist puzzle game with fog of war mechanics.',
   keywords: ['puzzle game', 'maze', 'fog of war', 'minimalist', 'browser game'],
   authors: [{ name: 'Blind Maze' }],
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover',
   themeColor: '#0d0d0d',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Blind Maze',
+  },
 };
 
 export default function RootLayout({
