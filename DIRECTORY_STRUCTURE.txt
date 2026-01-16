@@ -1,0 +1,314 @@
+Blind Maze - Complete Directory Structure
+==========================================
+
+Fogmaze/                                    # Root project folder
+│
+├── 📱 BlindMaze/                           # Main app source code
+│   ├── BlindMazeApp.swift                 # App entry point (@main)
+│   ├── Info.plist                         # App configuration & metadata
+│   │
+│   ├── 📁 Models/                         # Data structures
+│   │   └── Maze.swift                     # TileType, Position, Maze, MazeLevels
+│   │                                      # Contains all 5 level definitions
+│   │
+│   ├── 📁 ViewModels/                     # Business logic
+│   │   └── GameViewModel.swift            # Game state management
+│   │                                      # Movement logic, fog of war, level progression
+│   │
+│   ├── 📁 Views/                          # User interface
+│   │   ├── ContentView.swift              # Main container + swipe gesture handling
+│   │   └── MazeView.swift                 # Maze grid rendering + tile/player views
+│   │
+│   └── 📁 Assets.xcassets/                # App assets
+│       ├── Contents.json                  # Asset catalog metadata
+│       ├── AppIcon.appiconset/            # App icon (placeholder)
+│       │   └── Contents.json
+│       └── AccentColor.colorset/          # Accent color
+│           └── Contents.json
+│
+├── 🔧 BlindMaze.xcodeproj/                # Xcode project configuration
+│   └── project.pbxproj                    # Project settings, build config, file references
+│
+├── 📚 Documentation Files
+│   ├── README.md                          # Project overview & getting started
+│   ├── QUICK_START.md                     # 5-minute setup guide ⭐ START HERE
+│   ├── SETUP_INSTRUCTIONS.md              # Detailed installation & deployment
+│   ├── CODE_REFERENCE.md                  # Code structure & customization guide
+│   ├── GAME_DESIGN.md                     # Game design document
+│   ├── WEB_VERSION_GUIDE.md               # How to convert to web for Vercel
+│   ├── PROJECT_SUMMARY.md                 # Complete project summary
+│   └── DIRECTORY_STRUCTURE.txt            # This file
+│
+└── .gitignore                             # Git ignore rules for Xcode
+
+
+File Relationships
+==================
+
+┌─────────────────────────────────────────────────────────────┐
+│                    BlindMazeApp.swift                       │
+│                    (App Entry Point)                        │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+                         ↓
+┌─────────────────────────────────────────────────────────────┐
+│                     ContentView.swift                       │
+│              (Main View + Swipe Detection)                  │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+          ┌──────────────┴──────────────┐
+          ↓                             ↓
+┌──────────────────────┐    ┌──────────────────────┐
+│   MazeView.swift     │    │ GameViewModel.swift  │
+│   (Maze Rendering)   │◄───│  (Game Logic)        │
+└──────────────────────┘    └──────────┬───────────┘
+          │                            │
+          │                            ↓
+          │                 ┌──────────────────────┐
+          └────────────────►│    Maze.swift        │
+                            │  (Data Structures)   │
+                            └──────────────────────┘
+
+
+Code Flow
+=========
+
+User Action → ContentView → GameViewModel → Model → View Update
+
+1. User swipes on screen
+2. ContentView.handleSwipe() detects direction
+3. GameViewModel.movePlayer() validates and updates position
+4. Maze.swift data checked for walls/exit
+5. GameViewModel updates @Published properties
+6. MazeView automatically re-renders
+7. Smooth animations play
+
+
+File Purposes
+=============
+
+📱 SOURCE CODE (BlindMaze/)
+────────────────────────────
+
+BlindMazeApp.swift (15 lines)
+├─ Purpose: App entry point
+├─ Contains: @main App struct
+└─ Modify: Rarely (only for app-level config)
+
+Info.plist (XML)
+├─ Purpose: App metadata and configuration
+├─ Contains: Bundle ID, version, permissions
+└─ Modify: When changing app name, version, or settings
+
+Models/Maze.swift (200+ lines)
+├─ Purpose: Game data structures
+├─ Contains: TileType enum, Position struct, Maze struct, 5 levels
+└─ Modify: To add new levels or change maze data
+
+ViewModels/GameViewModel.swift (150+ lines)
+├─ Purpose: Game logic and state management
+├─ Contains: Movement, fog of war, level progression
+└─ Modify: To change game rules, visibility, timing
+
+Views/ContentView.swift (60+ lines)
+├─ Purpose: Main game container
+├─ Contains: Layout, level display, swipe detection
+└─ Modify: To change UI layout or add controls
+
+Views/MazeView.swift (180+ lines)
+├─ Purpose: Maze rendering
+├─ Contains: Grid layout, tile rendering, player rendering
+└─ Modify: To change visual style, colors, animations
+
+Assets.xcassets/ (JSON files)
+├─ Purpose: App icons and colors
+├─ Contains: Asset catalog definitions
+└─ Modify: To add app icon or change accent color
+
+
+🔧 PROJECT CONFIG
+─────────────────
+
+BlindMaze.xcodeproj/project.pbxproj (400+ lines)
+├─ Purpose: Xcode project configuration
+├─ Contains: Build settings, file references, targets
+└─ Modify: Rarely (Xcode manages this automatically)
+
+
+📚 DOCUMENTATION
+────────────────
+
+README.md
+├─ Audience: Everyone
+├─ Content: Project overview, features, installation
+└─ Read: First time seeing the project
+
+QUICK_START.md ⭐
+├─ Audience: New users
+├─ Content: 5-minute setup guide, troubleshooting
+└─ Read: When you want to run the app immediately
+
+SETUP_INSTRUCTIONS.md
+├─ Audience: Developers
+├─ Content: Detailed setup, deployment options
+└─ Read: When planning deployment
+
+CODE_REFERENCE.md
+├─ Audience: Developers
+├─ Content: Code structure, customization examples
+└─ Read: When modifying the code
+
+GAME_DESIGN.md
+├─ Audience: Designers, developers
+├─ Content: Game mechanics, visual design, architecture
+└─ Read: To understand design decisions
+
+WEB_VERSION_GUIDE.md
+├─ Audience: Web developers
+├─ Content: How to convert to Next.js for Vercel
+└─ Read: If you need web deployment
+
+PROJECT_SUMMARY.md
+├─ Audience: Everyone
+├─ Content: Complete project overview, status, next steps
+└─ Read: For comprehensive understanding
+
+DIRECTORY_STRUCTURE.txt
+├─ Audience: Everyone
+├─ Content: File organization and relationships
+└─ Read: To navigate the project (you are here!)
+
+
+Lines of Code
+=============
+
+Source Files:
+├─ BlindMazeApp.swift:        ~15 lines
+├─ Models/Maze.swift:         ~220 lines (includes 5 levels)
+├─ ViewModels/GameViewModel.swift: ~150 lines
+├─ Views/ContentView.swift:   ~60 lines
+├─ Views/MazeView.swift:      ~180 lines
+└─ Total Swift Code:          ~625 lines
+
+Documentation:
+├─ README.md:                 ~200 lines
+├─ QUICK_START.md:            ~350 lines
+├─ SETUP_INSTRUCTIONS.md:     ~200 lines
+├─ CODE_REFERENCE.md:         ~600 lines
+├─ GAME_DESIGN.md:            ~500 lines
+├─ WEB_VERSION_GUIDE.md:      ~450 lines
+├─ PROJECT_SUMMARY.md:        ~550 lines
+└─ Total Documentation:       ~2,850 lines
+
+Configuration:
+├─ Info.plist:                ~50 lines
+├─ project.pbxproj:           ~400 lines
+├─ .gitignore:                ~100 lines
+└─ Total Config:              ~550 lines
+
+Grand Total: ~4,025 lines
+
+
+File Dependencies
+=================
+
+BlindMazeApp.swift
+└─ imports: SwiftUI
+
+ContentView.swift
+├─ imports: SwiftUI
+└─ uses: GameViewModel, MazeView
+
+MazeView.swift
+├─ imports: SwiftUI
+└─ uses: GameViewModel, Position, TileType
+
+GameViewModel.swift
+├─ imports: SwiftUI, Combine
+└─ uses: Maze, Position, MazeLevels, Direction
+
+Maze.swift
+├─ imports: Foundation
+└─ uses: (no dependencies)
+
+
+What to Open First
+==================
+
+For Playing:
+1. BlindMaze.xcodeproj (opens Xcode)
+2. Press Cmd+R to run
+3. Play!
+
+For Understanding:
+1. README.md (overview)
+2. QUICK_START.md (setup)
+3. CODE_REFERENCE.md (code structure)
+
+For Customizing:
+1. CODE_REFERENCE.md (examples)
+2. Models/Maze.swift (add levels)
+3. Views/MazeView.swift (change colors)
+4. ViewModels/GameViewModel.swift (change rules)
+
+For Deploying:
+1. SETUP_INSTRUCTIONS.md (options)
+2. WEB_VERSION_GUIDE.md (if Vercel needed)
+3. PROJECT_SUMMARY.md (complete info)
+
+
+Quick Navigation
+================
+
+Want to...                          Open this file...
+────────────────────────────────────────────────────────────
+Run the app                         BlindMaze.xcodeproj
+Add a new level                     BlindMaze/Models/Maze.swift
+Change colors                       BlindMaze/Views/MazeView.swift
+Change game rules                   BlindMaze/ViewModels/GameViewModel.swift
+Change reveal time                  BlindMaze/ViewModels/GameViewModel.swift
+Add button controls                 BlindMaze/Views/ContentView.swift
+Understand architecture             GAME_DESIGN.md
+Learn code structure                CODE_REFERENCE.md
+Deploy to App Store                 SETUP_INSTRUCTIONS.md
+Deploy to Vercel                    WEB_VERSION_GUIDE.md
+Troubleshoot issues                 QUICK_START.md
+See project status                  PROJECT_SUMMARY.md
+
+
+File Sizes (Approximate)
+========================
+
+Source Code:        ~50 KB
+Documentation:      ~150 KB
+Xcode Project:      ~20 KB
+Total:              ~220 KB
+
+(Excluding Xcode build artifacts and derived data)
+
+
+Important Notes
+===============
+
+✅ All source code is in BlindMaze/ folder
+✅ Documentation is in root folder
+✅ Xcode project file is BlindMaze.xcodeproj
+✅ No external dependencies (pure SwiftUI)
+✅ No build artifacts included (clean project)
+✅ Ready to open and run immediately
+
+⚠️  This is iOS-only (SwiftUI)
+⚠️  Cannot deploy to Vercel without conversion
+⚠️  Requires macOS + Xcode to build
+⚠️  See WEB_VERSION_GUIDE.md for web alternative
+
+
+Last Updated
+============
+
+Date: January 16, 2026
+Status: Complete and ready to use
+Version: 1.0
+Platform: iOS 15.0+
+Language: Swift 5.0
+Framework: SwiftUI
