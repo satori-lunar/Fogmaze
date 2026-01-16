@@ -189,7 +189,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 9, y: 9 },
   },
 
-  // Level 10 - Double Spiral
+  // Level 10 - Double Spiral (fixed with accessible exit)
   {
     width: 11,
     height: 11,
@@ -199,7 +199,7 @@ export const levels: Maze[] = [
       [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Empty, Empty, Wall, Exit, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Wall, Exit, Empty, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
