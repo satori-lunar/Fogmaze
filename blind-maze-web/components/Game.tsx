@@ -8,9 +8,10 @@
 import { useSwipeable } from 'react-swipeable';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Direction } from '@/lib/types';
+import { Direction, GameState } from '@/lib/types';
 import { useGame } from '@/lib/useGame';
 import MazeGrid from './MazeGrid';
+import GameOverOverlay from './GameOverOverlay';
 
 export default function Game() {
   const {
@@ -21,6 +22,7 @@ export default function Game() {
     isRevealing,
     gameState,
     movePlayer,
+    restartLevel,
     totalLevels,
   } = useGame();
 
@@ -188,6 +190,11 @@ export default function Game() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Game Over Overlay */}
+      {gameState === GameState.GameOver && (
+        <GameOverOverlay onRetry={restartLevel} />
+      )}
     </div>
   );
 }

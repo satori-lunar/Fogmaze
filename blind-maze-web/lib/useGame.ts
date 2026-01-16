@@ -11,10 +11,12 @@ import {
   GameState,
   Position,
   Maze,
+  TileType,
   positionsEqual,
   getNeighbors,
   positionToKey,
   isWalkable,
+  getTileAt,
 } from './types';
 import { getLevel, totalLevels } from './levels';
 
@@ -152,15 +154,48 @@ export function useGame() {
       setPlayerPosition(newPosition);
       updateVisibleTiles(newPosition);
 
+      // Check tile type at new position
+      const tileType = getTileAt(maze, newPosition);
+
+      // Check if stepped on bomb
+      if (tileType === TileType.Bomb) {
+        setGameState(GameState.GameOver);
+        // Reveal entire maze
+        const allPositions = getAllPositions(maze);
+        const allKeys = new Set(allPositions.map(positionToKey));
+        setVisibleTiles(allKeys);
+        return;
+      }
+
+      // Check if stepped on reveal tile
+      if (tileType === TileType.Reveal) {
+        // Reveal entire maze for 3 seconds
+        const allPositions = getAllPositions(maze);
+        const allKeys = new Set(allPositions.map(positionToKey));
+        setVisibleTiles(allKeys);
+        
+        // Hide after 3 seconds
+        setTimeout(() => {
+          if (gameState === GameState.Playing) {
+            updateVisibleTiles(newPosition);
+          }
+        }, 3000);
+      }
+
       // Check if reached exit
       if (positionsEqual(newPosition, maze.exitPosition)) {
         setGameState(GameState.Transitioning);
+        // Reveal maze briefly before transition
+        const allPositions = getAllPositions(maze);
+        const allKeys = new Set(allPositions.map(positionToKey));
+        setVisibleTiles(allKeys);
+        
         setTimeout(() => {
           startLevel(currentLevel + 1);
-        }, 500);
+        }, 1000);
       }
     },
-    [gameState, playerPosition, maze, currentLevel, updateVisibleTiles, startLevel]
+    [gameState, playerPosition, maze, currentLevel, updateVisibleTiles, startLevel, getAllPositions]
   );
 
   // Restart current level

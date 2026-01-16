@@ -5,7 +5,7 @@
 
 import { Maze, TileType } from './types';
 
-const { Empty, Wall, Exit } = TileType;
+const { Empty, Wall, Exit, Bomb, Reveal } = TileType;
 
 export const levels: Maze[] = [
   // Level 1 - Simple introduction
@@ -210,7 +210,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 5, y: 5 },
   },
 
-  // Level 11 - Narrow Passages
+  // Level 11 - Narrow Passages (1 bomb)
   {
     width: 13,
     height: 9,
@@ -218,7 +218,7 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Exit, Wall],
       [Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall],
-      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Bomb, Empty, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall, Empty, Empty, Wall],
@@ -229,7 +229,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 11, y: 1 },
   },
 
-  // Level 12 - Checkerboard
+  // Level 12 - Checkerboard (2 bombs)
   {
     width: 11,
     height: 11,
@@ -237,11 +237,11 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Bomb, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Bomb, Empty, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
@@ -250,7 +250,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 9, y: 9 },
   },
 
-  // Level 13 - Snake Path
+  // Level 13 - Snake Path (1 bomb)
   {
     width: 9,
     height: 13,
@@ -258,7 +258,7 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
-      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Bomb, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
@@ -273,7 +273,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 7, y: 11 },
   },
 
-  // Level 14 - Ring Maze
+  // Level 14 - Ring Maze (2 bombs)
   {
     width: 11,
     height: 11,
@@ -281,20 +281,20 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Bomb, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Exit, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
-      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Bomb, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
     ],
     startPosition: { x: 1, y: 1 },
     exitPosition: { x: 5, y: 5 },
   },
 
-  // Level 15 - Quarters
+  // Level 15 - Quarters (2 bombs)
   {
     width: 13,
     height: 13,
@@ -302,13 +302,13 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Bomb, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Bomb, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Wall, Wall, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Empty, Exit, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
@@ -317,7 +317,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 11, y: 11 },
   },
 
-  // Level 16 - Labyrinth
+  // Level 16 - Labyrinth (2 bombs)
   {
     width: 13,
     height: 11,
@@ -325,11 +325,11 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Bomb, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall],
-      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Bomb, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Exit, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
@@ -338,7 +338,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 11, y: 9 },
   },
 
-  // Level 17 - Corridors
+  // Level 17 - Corridors (2 bombs)
   {
     width: 11,
     height: 13,
@@ -346,11 +346,11 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
-      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Bomb, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
-      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Bomb, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
@@ -361,7 +361,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 9, y: 11 },
   },
 
-  // Level 18 - Diamond
+  // Level 18 - Diamond (2 bombs)
   {
     width: 13,
     height: 13,
@@ -369,13 +369,13 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Bomb, Empty, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Exit, Empty, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Bomb, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
@@ -384,7 +384,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 6, y: 6 },
   },
 
-  // Level 19 - Maze Runner
+  // Level 19 - Maze Runner (2 bombs)
   {
     width: 15,
     height: 11,
@@ -392,12 +392,12 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Exit, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Wall, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Bomb, Wall, Empty, Empty, Empty, Wall, Wall, Wall, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Wall, Wall, Wall, Wall],
       [Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Wall, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Wall],
+      [Wall, Empty, Wall, Wall, Wall, Empty, Wall, Empty, Wall, Bomb, Wall, Empty, Empty, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Empty, Empty, Wall, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
     ],
@@ -405,7 +405,7 @@ export const levels: Maze[] = [
     exitPosition: { x: 13, y: 1 },
   },
 
-  // Level 20 - Grand Finale Easy
+  // Level 20 - Grand Finale Easy (2 bombs)
   {
     width: 15,
     height: 13,
@@ -413,13 +413,13 @@ export const levels: Maze[] = [
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Bomb, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Wall, Exit, Wall, Empty, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Empty, Wall],
-      [Wall, Empty, Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
+      [Wall, Empty, Wall, Empty, Empty, Empty, Bomb, Empty, Empty, Empty, Empty, Empty, Wall, Empty, Wall],
       [Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall, Wall, Wall, Wall, Wall, Empty, Wall],
       [Wall, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Empty, Wall],
       [Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall, Wall],

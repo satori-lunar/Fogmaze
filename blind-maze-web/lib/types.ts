@@ -7,6 +7,8 @@ export enum TileType {
   Empty = 'empty',
   Wall = 'wall',
   Exit = 'exit',
+  Bomb = 'bomb',
+  Reveal = 'reveal',
 }
 
 export interface Position {
@@ -33,6 +35,7 @@ export enum GameState {
   Revealing = 'revealing',
   Playing = 'playing',
   Transitioning = 'transitioning',
+  GameOver = 'gameover',
 }
 
 // Helper functions
@@ -67,5 +70,5 @@ export function getTileAt(maze: Maze, position: Position): TileType {
 
 export function isWalkable(maze: Maze, position: Position): boolean {
   const tile = getTileAt(maze, position);
-  return tile === TileType.Empty || tile === TileType.Exit;
+  return tile === TileType.Empty || tile === TileType.Exit || tile === TileType.Bomb || tile === TileType.Reveal;
 }
