@@ -12,7 +12,19 @@ import { useGame } from '@/lib/useGame';
 import MazeGrid from './MazeGrid';
 import GameOverOverlay from './GameOverOverlay';
 
-export default function Game() {
+interface GameProps {
+  initialLevel?: number;
+  onLevelComplete?: (level: number, bombFree: boolean) => void;
+  onGameOver?: () => void;
+  onExit?: () => void;
+}
+
+export default function Game({
+  initialLevel = 1,
+  onLevelComplete,
+  onGameOver,
+  onExit,
+}: GameProps) {
   const {
     currentLevel,
     playerPosition,
@@ -23,7 +35,7 @@ export default function Game() {
     movePlayer,
     restartLevel,
     totalLevels,
-  } = useGame();
+  } = useGame({ initialLevel, onLevelComplete });
 
   const [touchFeedback, setTouchFeedback] = useState<string | null>(null);
   const touchStartPos = useRef<{ x: number; y: number } | null>(null);
@@ -230,9 +242,22 @@ export default function Game() {
         )}
       </AnimatePresence>
 
+      {/* Exit button */}
+      {onExit && (
+        <motion.button
+          onClick={onExit}
+          className="absolute top-4 left-4 text-gray-500 hover:text-white transition-colors text-sm flex items-center gap-1"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          ← Home
+        </motion.button>
+      )}
+
       {/* Game Over Overlay */}
       {gameState === GameState.GameOver && (
-        <GameOverOverlay onRetry={restartLevel} />
+        <GameOverOverlay onRetry={restartLevel} onGoHome={onGameOver} />
       )}
     </div>
   );

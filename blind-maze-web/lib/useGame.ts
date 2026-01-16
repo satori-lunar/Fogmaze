@@ -20,8 +20,15 @@ import {
 } from './types';
 import { getLevel, totalLevels } from './levels';
 
-export function useGame() {
-  const [currentLevel, setCurrentLevel] = useState(1);
+interface UseGameOptions {
+  initialLevel?: number;
+  onLevelComplete?: (level: number, hitBomb: boolean) => void;
+}
+
+export function useGame(options: UseGameOptions = {}) {
+  const { initialLevel = 1, onLevelComplete } = options;
+  const [currentLevel, setCurrentLevel] = useState(initialLevel);
+  const [hitBombThisLevel, setHitBombThisLevel] = useState(false);
   const [playerPosition, setPlayerPosition] = useState<Position>({ x: 1, y: 1 });
   const [maze, setMaze] = useState<Maze>(() => getLevel(1)!);
   const [visibleTiles, setVisibleTiles] = useState<Set<string>>(new Set());
@@ -92,6 +99,7 @@ export function useGame() {
       setPlayerPosition(newMaze.startPosition);
       setGameState(GameState.Revealing);
       setIsRevealing(true);
+      setHitBombThisLevel(false); // Reset bomb tracking for new level
 
       // Reveal entire maze
       const allPositions = getAllPositions(newMaze);
@@ -114,7 +122,7 @@ export function useGame() {
   // Initialize game
   useEffect(() => {
     try {
-      startLevel(1);
+      startLevel(initialLevel);
     } catch (error) {
       console.error('Error initializing game:', error);
     }
@@ -124,7 +132,7 @@ export function useGame() {
         clearTimeout(revealTimerRef.current);
       }
     };
-  }, [startLevel]);
+  }, [startLevel, initialLevel]);
 
   // Move player
   const movePlayer = useCallback(
@@ -159,6 +167,7 @@ export function useGame() {
 
       // Check if stepped on bomb
       if (tileType === TileType.Bomb) {
+        setHitBombThisLevel(true);
         setGameState(GameState.GameOver);
         setIsRevealing(true); // Show bombs on game over
         // Reveal entire maze
@@ -196,12 +205,17 @@ export function useGame() {
         const allKeys = new Set(allPositions.map(positionToKey));
         setVisibleTiles(allKeys);
         
+        // Notify level completion
+        const bombFree = !hitBombThisLevel;
+        onLevelComplete?.(currentLevel, bombFree);
+        
         setTimeout(() => {
+          setHitBombThisLevel(false); // Reset for next level
           startLevel(currentLevel + 1);
         }, 1000);
       }
     },
-    [gameState, playerPosition, maze, currentLevel, updateVisibleTiles, startLevel, getAllPositions]
+    [gameState, playerPosition, maze, currentLevel, updateVisibleTiles, startLevel, getAllPositions, hitBombThisLevel, onLevelComplete]
   );
 
   // Restart current level

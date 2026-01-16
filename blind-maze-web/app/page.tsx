@@ -2,8 +2,8 @@
  * Main page component
  */
 
-import Game from '@/components/Game';
+import AppShell from '@/components/AppShell';
 
 export default function Home() {
-  return <Game />;
+  return <AppShell />;
 }

@@ -10,11 +10,16 @@ A minimalist puzzle game with fog of war mechanics, built with Next.js, React, a
 
 - 🧩 Grid-based maze navigation
 - 🌫️ Fog of war mechanic (3-second reveal)
+- 💣 Hidden bomb tiles that end your run
+- ❤️ Hearts system (3 daily, resets at midnight UTC)
+- 🪙 Gold rewards for completing levels
+- 🛒 In-app store for hearts and gold
+- 💳 Stripe integration for purchases
 - 📱 Works on all devices (desktop, tablet, mobile)
 - ⌨️ Keyboard controls (Arrow keys or WASD)
-- 👆 Touch/swipe controls for mobile
+- 👆 Touch/drag controls for mobile
 - 🎨 Smooth animations with Framer Motion
-- 🎯 5 handcrafted levels
+- 🎯 30 handcrafted levels
 - 🌙 Dark minimalist design
 - 🚀 Deployed on Vercel
 
@@ -91,7 +96,18 @@ vercel --prod
 1. Level starts with a 3-second maze reveal
 2. Memorize the path to the green exit
 3. Navigate using only 1-tile visibility radius
-4. Reach the exit to advance to the next level
+4. Avoid hidden bombs (red glow during reveal)
+5. Reach the exit to advance to the next level
+
+### Economy
+
+- **Hearts**: You have 3 hearts per day (resets at midnight UTC)
+- **Each level attempt costs 1 heart**
+- **Earn gold** by completing levels:
+  - +1 gold per level completed
+  - +5 bonus gold for completing without hitting a bomb
+- **Buy hearts** with gold (10 gold = 1 heart)
+- **Buy gold** with real money via Stripe
 
 ## 🏗️ Project Structure
 
@@ -187,7 +203,38 @@ revealTimerRef.current = setTimeout(() => {
 
 ## 📝 Environment Variables
 
-No environment variables required! The app works out of the box.
+For the basic game, no environment variables are required.
+
+For **Stripe payments** (in-app purchases), create a `.env.local` file:
+
+```bash
+# Stripe Configuration
+# Get your keys from https://dashboard.stripe.com/apikeys
+STRIPE_SECRET_KEY=sk_test_...
+STRIPE_PUBLISHABLE_KEY=pk_test_...
+
+# Stripe Price IDs for gold packages
+# Create these products in your Stripe dashboard
+STRIPE_PRICE_SMALL=price_...    # 50 gold - $0.99
+STRIPE_PRICE_MEDIUM=price_...   # 150 gold - $2.99
+STRIPE_PRICE_LARGE=price_...    # 500 gold - $7.99
+
+# Base URL for redirects (optional - auto-detected)
+NEXT_PUBLIC_BASE_URL=https://your-domain.vercel.app
+```
+
+### Setting up Stripe
+
+1. Create a [Stripe account](https://dashboard.stripe.com/register)
+2. Get your API keys from the dashboard
+3. Create 3 products for gold packages:
+   - Small: 50 gold for $0.99
+   - Medium: 150 gold for $2.99
+   - Large: 500 gold for $7.99
+4. Copy the price IDs to your environment variables
+5. Add the environment variables to Vercel:
+   - Go to your project settings
+   - Add each variable under "Environment Variables"
 
 ## 🐛 Known Issues
 
